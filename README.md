@@ -2,9 +2,9 @@ I pass level 1.1 :)
 
 ## Get ready
 
-fork me
+[fork](https://help.github.com/articles/fork-a-repo) me and [clone](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork) your repository locally.
 
-install node.js then run
+install [node.js](http://nodejs.org/) then run
 
 ```sh
 npm install
