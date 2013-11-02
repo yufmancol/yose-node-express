@@ -1,3 +1,3 @@
-var server  = require('./server');
+var server  = require('./libs/server');
 
 server.listen(7000);
