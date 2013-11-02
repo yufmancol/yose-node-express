@@ -36,7 +36,7 @@ And show your friends what you have so far
 
 ## Deploy
 
-Deploy and run your server so that @the game can call it.
+Deploy and run your server so that the game can call it.
 
 For example, on a local server that can be accessed by the internet, just run
 
