@@ -16,6 +16,21 @@ check your install: run the specs
 npm test
 ```
 
+## Look at what it looks like
+
+from your command line
+
+```sh
+node app.js
+```
+
+Open your browser and navigate to
+
+```sh
+http://localhost:7000/ping
+```
+
+
 ## Deploy
 
 Deploy and run your server so that @YoseTheGame can call it.
