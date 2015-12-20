@@ -1,3 +1,5 @@
 var server  = require('./libs/server');
 
-server.listen(5000);
+var port = process.env.PORT || 7000;
+
+server.listen(port);
