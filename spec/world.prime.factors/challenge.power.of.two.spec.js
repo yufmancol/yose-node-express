@@ -1,6 +1,6 @@
 var request = require('request');
 var http    = require('http');
-var server  = require('../libs/server');
+var server  = require('../../libs/server');
 
 describe('Passing the Power of Two level:', function() {
 
@@ -12,13 +12,6 @@ describe('Passing the Power of Two level:', function() {
 
     afterEach(function() {
         testServer.close(); 
-    });
-   
-    it('answers with application/json header', function(done) {
-        request('http://localhost:7000/', function(error, response, body) {
-            expect(response.headers['content-type']).toEqual('application/json');
-            done(); 
-        });
     });
    
     it('returns the expected output', function(done) {
