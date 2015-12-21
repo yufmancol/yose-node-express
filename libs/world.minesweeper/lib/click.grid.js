@@ -7,7 +7,13 @@ function clickGrid(element){
 		element.className = "lost";
 	} else {
 		element.className = "safe";
-		element.innerHTML = checkBombAround(document.grid, pos);	
+
+		element.innerHTML = '';
+
+		var bombCount = checkBombAround(document.grid, pos);
+
+		if(bombCount > 0)
+			element.innerHTML = bombCount; 	
 	}
 }
 
