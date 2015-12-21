@@ -4,8 +4,10 @@ var parseCellId = require('./lib/parse.cell.id');
 
 var minesweeper = function(request, response) {
 	var grid_size = 8;
-	var content="<html><head>";
-	content+='<style>td { border: 1px solid #000; width: 30px; height: 30px; }</style>'
+	var content="<html><head><style>";
+	content+='td { border: 1px solid #000; width: 30px; height: 30px; }\n';
+	content+='.lost{ background: red; }';
+	content+='</style>';
 	content+='<script type="text/javascript">\n';
 	content+= load.toString();
 	content+= parseCellId.toString();
