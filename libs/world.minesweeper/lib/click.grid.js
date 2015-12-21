@@ -3,12 +3,11 @@ function clickGrid(element){
 
 	var gridContent = document.grid[pos[0]-1][pos[1]-1];
 
-	console.log(gridContent);
 	if(gridContent === 'bomb'){
 		element.className = "lost";
 	} else {
 		element.className = "safe";
-		element.innerHTML = 1;	
+		element.innerHTML = checkBombAround(document.grid, pos);	
 	}
 }
 

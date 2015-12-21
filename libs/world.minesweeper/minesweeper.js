@@ -1,6 +1,7 @@
 var load = require('./lib/load.grid');
 var clickGrid = require('./lib/click.grid');
 var parseCellId = require('./lib/parse.cell.id');
+var checkBombAround = require('./lib/check.bomb.around');
 
 var minesweeper = function(request, response) {
 	var grid_size = 8;
@@ -11,6 +12,7 @@ var minesweeper = function(request, response) {
 	content+='<script type="text/javascript">\n';
 	content+= load.toString();
 	content+= parseCellId.toString();
+	content+= checkBombAround.toString();
 	content+= clickGrid.toString();
 	content+='\ndocument.grid = [];';
 	content+='</script></head>';
