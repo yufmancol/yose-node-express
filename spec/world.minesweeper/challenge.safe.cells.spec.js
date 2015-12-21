@@ -9,14 +9,14 @@ var data = [
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+        ['empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
     ];
 
-describe('Passing the Minesweeper: injection level:', function() {
+describe('Passing the Minesweeper: safe cell level:', function() {
     beforeEach(function(done) {
         testServer = http.createServer(server).listen(7000, done);
     });
@@ -25,36 +25,19 @@ describe('Passing the Minesweeper: injection level:', function() {
         testServer.close(); 
     });
 
-    it("has load() function", function(done){
-        browser.visit(url, function(err) {
-            var result = browser.evaluate('typeof load');
-            expect(result).toEqual('function'); 
-
-            done();
-        });
-    });
-
-    it("can inject document.grid", function(done){
-        browser.visit(url, function(err) {
-
-            browser.document.grid = data;
-            expect(browser.document.grid).not.toBe(undefined); 
-            expect(browser.document.grid).toBe(data);
-
-            done();
-        });
-    });
-
-    it("returns class='lost' when cell is clicked", function(done) {
+    it("returns class='safe' and innerHTML='1' when cell is clicked", function(done) {
         browser.visit(url, function(err) {
             browser.document.grid = data;
 
-            browser.click('[id="cell-3x6"]');
-            var element = browser.query('[id="cell-3x6"]');
+            browser.click('[id="cell-4x4"]');
+            var element = browser.query('[id="cell-4x4"]');
 
             var classes = element.className;
-            expect(classes).toEqual('lost');
-               
+            expect(classes).toEqual('safe');
+
+            var innerHTML = element.innerHTML;
+            expect(innerHTML).toEqual('1');
+
             done();
         });
                
