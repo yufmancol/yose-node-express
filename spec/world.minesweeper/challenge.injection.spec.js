@@ -7,13 +7,13 @@ var url = "http://localhost:7000/minesweeper";
 
 var data = [
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+        ['bomb', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'bomb' , 'empty', 'empty'],
+        ['bomb', 'empty', 'empty', 'bomb', 'empty', 'empty', 'empty', 'empty'],
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+        ['empty', 'empty', 'empty', 'empty', 'bomb', 'empty', 'empty', 'empty'],
+        ['empty', 'empty', 'bomb', 'empty', 'bomb', 'bomb', 'empty', 'empty'],
+        ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'bomb', 'empty'],
     ];
 
 describe('Passing the Minesweeper: injection level:', function() {
@@ -49,11 +49,14 @@ describe('Passing the Minesweeper: injection level:', function() {
         browser.visit(url, function(err) {
             browser.document.grid = data;
 
-            browser.click('[id="cell-3x6"]');
-            var element = browser.query('[id="cell-3x6"]');
+            browser.click('[id="cell-2x1"]');
+            var element = browser.query('[id="cell-2x1"]');
 
             var classes = element.className;
             expect(classes).toEqual('lost');
+
+            element = browser.query('[id="cell-7x3"]');
+            expect(element.className).toEqual('lost');
                
             done();
         });

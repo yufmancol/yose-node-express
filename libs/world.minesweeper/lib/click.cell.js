@@ -1,10 +1,10 @@
 function clickCell(element){
-	//var position = parseCellId(element.id);
-	//var row = position[0];
-	//var column = position[1];
+	var position = parseCellId(element.id);
+	var row = position[0];
+	var column = position[1];
 
 	var grid = document.grid;
-	//var clickedCellContent = grid[row][column];
+	var clickedCellContent = grid[row][column];
 	
 	element.innerHTML = ''; // initially clean up inner html content
 
@@ -23,7 +23,7 @@ function clickCell(element){
 				cell.innerHTML = bombCount; 
 			}
 
-			cellContent = grid[n][p];
+			var cellContent = grid[n][p];
 			if(cellContent === 'bomb'){
 				cell.className = "lost";
 			} else {
@@ -31,6 +31,12 @@ function clickCell(element){
 			}
 		}
 
+	}
+
+	if(clickedCellContent === 'bomb'){
+		element.className = "lost";
+	} else {
+		element.className = "safe";
 	}
 
 };
