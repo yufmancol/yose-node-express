@@ -33,6 +33,6 @@ function clickCell(element){
 
 	}
 
-}
+};
 
 module.exports = clickCell;

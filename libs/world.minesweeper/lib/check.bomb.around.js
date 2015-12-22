@@ -52,6 +52,6 @@ function checkBombAround(data, position){
 	}
 
 	return bombCount;
-}
+};
 
 module.exports = checkBombAround;

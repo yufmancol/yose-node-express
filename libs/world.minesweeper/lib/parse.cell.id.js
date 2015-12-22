@@ -8,6 +8,6 @@ function parseCellId(id){
 	}
 
 	return result;
-}
+};
 
 module.exports = parseCellId;
