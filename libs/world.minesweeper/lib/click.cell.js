@@ -8,7 +8,7 @@ function clickCell(element){
 	var clickedCellContent = grid[row][column];
 	
 	element.innerHTML = ''; // initially clean up inner html content
-
+/*
 	for(n=0; n<grid.length; n++){
 		
 		for(p=0; p<grid.length; p++){
@@ -33,7 +33,7 @@ function clickCell(element){
 		}
 
 	}
-
+*/
 	var bombCount = checkBombAround(grid, position);
 	if(bombCount > 0) {
 		element.innerHTML = bombCount; 
