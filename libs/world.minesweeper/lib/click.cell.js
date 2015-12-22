@@ -4,6 +4,7 @@ function clickCell(element){
 	var column = position[1];
 
 	var grid = document.grid;
+	console.log(row, column);
 	var clickedCellContent = grid[row][column];
 	
 	element.innerHTML = ''; // initially clean up inner html content
