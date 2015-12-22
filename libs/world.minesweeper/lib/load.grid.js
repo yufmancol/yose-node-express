@@ -1,6 +1,27 @@
 function load(){
-	document.grid = new Array(Math.ceil(( (Math.random()) * 10)));
-	console.log(document.grid);
+	var grid = [
+				[
+	                ['empty', 'empty', 'bomb' ],
+	                ['empty', 'empty', 'empty'],
+	                ['empty', 'empty', 'empty']
+            	],
+            	[
+	            	['bomb' , 'empty', 'empty'],
+	                ['empty', 'empty', 'empty'],
+	                ['empty', 'empty', 'bomb' ]
+                ],[
+                	['bomb' , 'bomb' , 'bomb' ],
+	                ['empty', 'empty', 'empty'],
+	                ['empty', 'empty', 'empty']
+                ],[
+					['empty', 'empty', 'bomb' ],
+	                ['bomb' , 'empty', 'empty'],
+	                ['empty', 'empty', 'empty']
+                ]
+            ];
+
+	document.grid = grid[Math.floor(Math.random() * grid.length)];
+	//console.log(document.grid);
 };
 
 module.exports = load;

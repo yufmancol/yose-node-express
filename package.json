@@ -14,7 +14,8 @@
   "devDependencies": {
     "request": "2.27.0",
     "jasmine-node": "1.11.0",
-    "zombie": "4.2.1"
+    "zombie": "4.2.1",
+    "deep-equal": "1.0.1"
   },
   "scripts": {
     "test": "jasmine-node spec"
