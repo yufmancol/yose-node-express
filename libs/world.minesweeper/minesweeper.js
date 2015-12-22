@@ -14,7 +14,7 @@ var minesweeper = function(request, response) {
 	content+= parseCellId.toString();
 	content+= checkBombAround.toString();
 	content+= clickCell.toString();
-	//content+= "document.onreadystatechange=load();";
+	content+= "document.onreadystatechange=load();";
 	content+='</script></head>';
 	content+='<body><h1 id="title">Minesweeper</h1>';
 

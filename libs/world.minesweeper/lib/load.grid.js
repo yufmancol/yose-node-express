@@ -40,7 +40,8 @@ function load(){
                 ]
             ];
 
-	document.grid = grid[Math.floor(Math.random() * grid.length)];
+	//document.grid = grid[Math.floor(Math.random() * grid.length)];
+	document.grid = [];
 	//console.log(document.grid);
 };
 
