@@ -15,6 +15,7 @@ var minesweeper = function(request, response) {
 	content+= checkBombAround.toString();
 	content+= clickCell.toString();
 	content+='\ndocument.grid = [];';
+	content+='document.onload= load();'
 	content+='</script></head>';
 	content+='<body><h1 id="title">Minesweeper</h1>';
 

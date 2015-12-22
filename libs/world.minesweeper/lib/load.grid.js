@@ -1,5 +1,6 @@
 function load(){
-	console.log(document.grid);
+	var gridSize = Math.floor((Math.random() * 10) + 1);
+	document.grid = new Array(gridSize); // random grid;
 };
 
 module.exports = load;
