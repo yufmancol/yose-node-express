@@ -1,5 +1,5 @@
 var load = require('./lib/load.grid');
-var clickGrid = require('./lib/click.grid');
+var clickCell = require('./lib/click.cell');
 var parseCellId = require('./lib/parse.cell.id');
 var checkBombAround = require('./lib/check.bomb.around');
 
@@ -13,7 +13,7 @@ var minesweeper = function(request, response) {
 	content+= load.toString();
 	content+= parseCellId.toString();
 	content+= checkBombAround.toString();
-	content+= clickGrid.toString();
+	content+= clickCell.toString();
 	content+='\ndocument.grid = [];';
 	content+='</script></head>';
 	content+='<body><h1 id="title">Minesweeper</h1>';
@@ -22,7 +22,7 @@ var minesweeper = function(request, response) {
 	for(var n=1; n<=grid_size; n++){
 		content+="<tr id=\"row-"+n+"\">";
 		for(var p=1; p<=grid_size; p++){
-			content+="<td id=\"cell-"+n+"x"+p+"\" onclick=\"clickGrid(this);\"></td>";
+			content+="<td id=\"cell-"+n+"x"+p+"\" onclick=\"clickCell(this);\"></td>";
 		}
 		content+="</tr>";
 	}

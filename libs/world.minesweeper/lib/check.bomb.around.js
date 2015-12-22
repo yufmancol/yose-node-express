@@ -1,9 +1,9 @@
 function checkBombAround(data, position){
 	var bombCount = 0;
 	var gridSize = data.length;
-	var row = position[0]-1;
-	var column = position[1]-1;
-
+	var row = position[0];
+	var column = position[1];
+	
 	// --- upper
 	// row-1,column-1
 	if(row > 0){
