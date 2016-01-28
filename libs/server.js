@@ -2,6 +2,8 @@ var express = require('express');
 
 var server = express();
 
+server.set('view engine', 'jade');
+
 server.get('/', function(request, response){
     require('./challenge.hello.yose/hello')(request, response);
 });
