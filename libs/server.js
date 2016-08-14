@@ -1,8 +1,13 @@
 var express = require('express');
-
 var server = express();
+var nunjucks = require('nunjucks');
 
-server.set('view engine', 'jade');
+server.set('view engine', 'mustache');
+
+nunjucks.configure('views', {
+    autoescape: true,
+    express: server
+});
 
 server.get('/', function(request, response){
     require('./challenge.hello.yose/hello')(request, response);

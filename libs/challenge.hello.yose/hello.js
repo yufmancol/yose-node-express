@@ -1,6 +1,6 @@
 var hello = function(request, response) {
     response.setHeader('Content-Type', 'text/html');
-    response.render('index');
+    response.render('index.html');
 };
 
 module.exports = hello;
