@@ -1,5 +1,7 @@
 var request = require('request');
 var http    = require('http');
+var chai = require('chai');
+var expect = chai.expect;
 var server  = require('../libs/server');
 
 describe('Passing the ping level:', function() {
@@ -16,14 +18,14 @@ describe('Passing the ping level:', function() {
    
     it('answers with application/json header', function(done) {
         request('http://localhost:7000/ping', function(error, response, body) {
-            expect(response.headers['content-type']).toEqual('application/json');
+            expect(response.headers['content-type']).to.equal('application/json');
             done(); 
         });
     });
    
-    it('answsers the expected pong', function(done) {
+    it('returns the expected pong', function(done) {
         request('http://localhost:7000/ping', function(error, response, body) {
-            expect(body).toEqual( JSON.stringify( { alive: true } ) );
+            expect(body.replace(/\r?\n|\r|\s/g,"")).to.equal( JSON.stringify({"alive":true}) );
             done(); 
         });
     });
