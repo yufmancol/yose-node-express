@@ -1,9 +1,11 @@
-<html>
-<body>
+{% extends "base.html" %}
+
+{% block head %}<title>Hello Yose</title>{% endblock %}
+
+{% block content %}
 <h1>Hello Yose</h1>
 <ul>
-	<li><a id="repository-link" href="https://github.com/jpartogi/node-express-example">Source Repository</a></li>
+	<li><a id="repository-link" href="https://github.com/jpartogi/yose-node-express">Source Repository</a></li>
 	<li><a id="ping-challenge-link" href="ping">Ping Me</li>
 </ul>
-</body>
-</html>
+{% endblock %}

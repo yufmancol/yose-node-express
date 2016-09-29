@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Minesweeper</title>
+<script type="text/javascript" src="js/minesweeper/load.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+var document.grid = [[]];
+document.onreadystatechange=load();
+</script>
+
+<link rel="stylesheet" href="css/minesweeper.css">
+{% endblock %}
+
+{% block content %}
+<h1 id="title">Minesweeper</h1>
+
+<table>
+<tr></tr>
+</table>
+{% endblock %}
