@@ -2,8 +2,6 @@ var express = require('express');
 var server = express();
 var nunjucks = require('nunjucks');
 
-server.set('view engine', 'mustache');
-
 nunjucks.configure('views', {
     autoescape: true,
     express: server
@@ -29,4 +27,5 @@ server.get('/astroport', function(request, response){
 	require('./world.astroport/astroport')(request, response);
 });
 
+server.use(express.static('public'));
 module.exports = server;

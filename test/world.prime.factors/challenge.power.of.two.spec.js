@@ -1,5 +1,7 @@
 var request = require('request');
 var http    = require('http');
+var chai = require('chai');
+var expect = chai.expect;
 var server  = require('../../libs/server');
 
 describe('Passing the Power of Two level:', function() {
@@ -16,7 +18,7 @@ describe('Passing the Power of Two level:', function() {
    
     it('returns the expected output', function(done) {
         request('http://localhost:7000/primeFactors?number=16', function(error, response, body) {
-            expect(body).toEqual( JSON.stringify( 
+            expect(body).to.equal( JSON.stringify( 
                 {
                     "number" : 16,
                     "decomposition" : [ 2, 2, 2, 2 ]
