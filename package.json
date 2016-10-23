@@ -21,6 +21,6 @@
     "zombie": "4.2.1"
   },
   "scripts": {
-    "test": "istanbul cover _mocha -- -u exports test --recursive"
+    "test": "istanbul cover ./.node_modules/.bin/_mocha -u exports test --recursive"
   }
 }
