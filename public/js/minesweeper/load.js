@@ -1,4 +1,4 @@
-load = function(){
+var load = function(){
 	var grid = [
 				[
 	                ['empty', 'empty', 'bomb' , 'empty', 'empty', 'bomb', 'empty', 'empty'],

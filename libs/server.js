@@ -2,6 +2,8 @@ var express = require('express');
 var server = express();
 var nunjucks = require('nunjucks');
 
+server.use(express.static(__dirname + '../../public'));
+
 nunjucks.configure('views', {
     autoescape: true,
     express: server
