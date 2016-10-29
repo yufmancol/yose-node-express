@@ -1,7 +1,7 @@
 primeFactorsOf = function(number) {
 	var factors = [];
-  var iterate = number / 2;
-  for(var i=0;i<iterate;i++){
+  while(number!=1){
+    number = number / 2;
     factors.push(2);
   }
 	return factors;
