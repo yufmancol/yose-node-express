@@ -1,7 +1,14 @@
+<script type='text/javascript'>
+  function clear(obj)
+  {
+      alert('sadsadas');
+  }
+</script>
+
 <h1 id="astroport-name">Mak Erot</h1>
 
 <ul>
-  <li id="gate-1">
+  <li id="gate-1" class="{{ cssClasGate1 }}">
     <p id="ship-1">
       {{ shipName }}
     </p>
@@ -12,5 +19,9 @@
 
 
 <form action="/astroport" method="GET">
-  Ship <input id="ship" name="ship" type="text" /><button id="dock" type="submit">Dock</button>
+  Ship <input id="ship" onfocus='clear(this);' name="ship" type="text" /><button id="dock" type="submit">Dock</button>
 </form>
+
+<div id="info" class="{{ cssClasInfo }}">
+  Syalalala
+</div>
